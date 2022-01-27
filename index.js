@@ -1,8 +1,15 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
+const Manager = require('./lib/manager');
+const Engineer = require('./lib/engineer');
+const Intern = require('./lib/intern');
+
+var templateStr = ``;
 
 inquirer
+    // sets up the prompts to be shown to the user
     .prompt([
+        // This first set of prompts is for the manager's information
         {
             type: 'input',
             message: "Enter the manager's name.",
@@ -31,14 +38,46 @@ inquirer
         },
     ])
     .then((data) => {
-        console.log(data);
+        // Assigns the user inputs to a new instance of the Manager class
+        var newManager = new Manager(data.managerName, data.managerID,
+            data.managerEmail, managerOfficeNum);
 
+        // Calls on the methods of the Manager class and assigns them to a usuable variable
+        let uniqueRole = newManager.getRole();
+        let uniqueName = newManager.getName();
+        let uniqueID = newManager.getId();
+        let uniqueEmail = newManager.getEmail();
+        let uniqueOffNum = newManager.getOfficeNumber();
+
+        // Formatting such as spaces, indents, tabs are still stored in the template string
+        // So we have to keep those in there to prevent the output file from having bad syntax
+        // The template strings may or may not look pleasant.
+        var managerStr = `
+        <div class="card m-5 mt-4" style="width: 18rem;">
+            <div class="card-header text-center text-white bg-success bg-opacity-75">
+                ${uniqueRole}
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Name: ${uniqueName}</li>
+                <li class="list-group-item">ID: ${uniqueID}</li>
+                <li class="list-group-item">Email: ${uniqueEmail}</li>
+                <li class="list-group-item">Office Number: ${uniqueOffNum}</li>
+            </ul>
+        </div>
+  
+    `;
+        // Concatenates the manager's template string to the initial template string for the output file.
+        templateStr += managerStr;
+
+        console.log(newManager);
+
+        // Executes the function depending on user input
         if(data.addEmployee === "Engineer") {
             addEngineer();
-        } else if(data.addEmployee === "Intern") {
+        }
+
+        if(data.addEmployee === "Intern") {
             addIntern();
-        } else {
-            return;
         }
 
     })
@@ -47,6 +86,7 @@ function addEngineer() {
 
     inquirer
     .prompt([
+        // This second set of prompts is for the engineer's information
         {
             type: 'input',
             message: "Enter the engineer's name.",
@@ -75,14 +115,16 @@ function addEngineer() {
         },
     ])
     .then((data) => {
-        console.log(data);
+        var newEngineer = new Engineer(data.engineerName, data.engineerID,
+                                    data.engineerEmail, data.engineerGithub);
+        console.log(newEngineer);
 
         if(data.addEmployee === "Engineer") {
             addEngineer();
-        } else if(data.addEmployee === "Intern") {
+        }
+        
+        if(data.addEmployee === "Intern") {
             addIntern();
-        } else {
-            return;
         }
     })
 }
@@ -91,6 +133,7 @@ function addIntern() {
 
     inquirer
     .prompt([
+        // This third set of prompts is for the intern's information
         {
             type: 'input',
             message: "Enter the intern's name.",
@@ -119,14 +162,16 @@ function addIntern() {
         },
     ])
     .then((data) => {
-        console.log(data);
+        var newIntern = new Intern(data.internName, data.internID,
+            data.internEmail, data.internSchool);
+        console.log(newIntern);
 
         if(data.addEmployee === "Engineer") {
             addEngineer();
-        } else if(data.addEmployee === "Intern") {
+        }
+        
+        if(data.addEmployee === "Intern") {
             addIntern();
-        } else {
-            return;
         }
     })
 }
