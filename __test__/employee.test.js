@@ -6,7 +6,7 @@ describe('Employee', () => {
         let employee1 = new Employee("Emily", "10", "emily@gmail.com");
         let currentName = employee1.getName();
         // Assert
-        expect(currentName).toBe("Emily");;
+        expect(currentName).toBe("Emily");
     })
 
     it('getId returns the Id of the current employee instance', () => {
@@ -14,7 +14,7 @@ describe('Employee', () => {
         let employee1 = new Employee("Emily", "10", "emily@gmail.com");
         let currentId = employee1.getId();
         // Assert
-        expect(currentId).toBe("10");;
+        expect(currentId).toBe("10");
     });
 
     it('getEmail returns the email of the current employee instance', () => {
@@ -22,7 +22,7 @@ describe('Employee', () => {
         let employee1 = new Employee("Emily", "10", "emily@gmail.com");
         let currentEmail = employee1.getEmail();
         // Assert
-        expect(currentEmail).toBe("emily@gmail.com");;
+        expect(currentEmail).toBe("emily@gmail.com");
     });
 
     it('getRole returns the role of the current employee instance', () => {
