@@ -34,12 +34,10 @@ inquirer
         console.log(data);
 
         if(data.addEmployee === "Engineer") {
-            console.log("1");
             addEngineer();
         } else if(data.addEmployee === "Intern") {
-            console.log("2");
+            addIntern()
         } else {
-            console.log("3");
         }
 
     })
@@ -79,12 +77,55 @@ function addEngineer() {
         console.log(data);
 
         if(data.addEmployee === "Engineer") {
-            console.log("1");
             addEngineer();
         } else if(data.addEmployee === "Intern") {
-            console.log("2");
+            addIntern();
         } else {
-            console.log("3");
+
+        }
+    })
+}
+
+function addIntern() {
+
+    inquirer
+    .prompt([
+        {
+            type: 'input',
+            message: "Enter the intern's name.",
+            name: 'internName',
+        },
+        {
+            type: 'input',
+            message: "Enter the intern's ID.",
+            name: 'internID',
+        },
+        {
+            type: 'input',
+            message: "Enter the intern's email address.",
+            name: 'internEmail',
+        },
+        {
+            type: 'input',
+            message: "Enter the intern's school.",
+            name: 'internSchool',
+        },
+        {
+            type: 'list',
+            message: "Which type of employee would you like to add?",
+            choices: ["Engineer", "Intern", "I don't want to add any more employees."],
+            name: 'addEmployee',
+        },
+    ])
+    .then((data) => {
+        console.log(data);
+
+        if(data.addEmployee === "Engineer") {
+            addEngineer();
+        } else if(data.addEmployee === "Intern") {
+            addIntern();
+        } else {
+
         }
     })
 }
