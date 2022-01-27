@@ -1,6 +1,6 @@
 const Employee = require("../lib/employee");
 
-describe('employee', () => {
+describe('Employee', () => {
     it('getName returns the name of the current employee instace', () => {
 
         let employee1 = new Employee("Emily", "10", "emily@gmail.com");
@@ -25,7 +25,7 @@ describe('employee', () => {
         expect(currentEmail).toBe("emily@gmail.com");;
     });
 
-    it('getEmail returns the email of the current employee instance', () => {
+    it('getRole returns the role of the current employee instance', () => {
 
         let employee1 = new Employee("Emily", "10", "emily@gmail.com");
         let currentRole = employee1.getRole();
