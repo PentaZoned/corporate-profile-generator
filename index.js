@@ -36,8 +36,9 @@ inquirer
         if(data.addEmployee === "Engineer") {
             addEngineer();
         } else if(data.addEmployee === "Intern") {
-            addIntern()
+            addIntern();
         } else {
+            return;
         }
 
     })
@@ -81,7 +82,7 @@ function addEngineer() {
         } else if(data.addEmployee === "Intern") {
             addIntern();
         } else {
-
+            return;
         }
     })
 }
@@ -125,7 +126,7 @@ function addIntern() {
         } else if(data.addEmployee === "Intern") {
             addIntern();
         } else {
-
+            return;
         }
     })
 }
