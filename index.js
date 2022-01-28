@@ -69,8 +69,6 @@ inquirer
         // Concatenates the manager's template string to the initial template string for the output file.
         templateStr += managerStr;
 
-        console.log(newManager);
-
         // Executes the function depending on user input
         if(data.addEmployee === "Engineer") {
             addEngineer();
@@ -139,8 +137,6 @@ function addEngineer() {
     `;
         templateStr += engineerStr;
 
-        console.log(newEngineer);
-
         if(data.addEmployee === "Engineer") {
             addEngineer();
         } else if(data.addEmployee === "Intern") {
@@ -208,8 +204,6 @@ function addIntern() {
   
     `;
         templateStr += internStr;
-
-        console.log(newIntern);
 
         if(data.addEmployee === "Engineer") {
             addEngineer();
