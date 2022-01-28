@@ -117,6 +117,29 @@ function addEngineer() {
     .then((data) => {
         var newEngineer = new Engineer(data.engineerName, data.engineerID,
                                     data.engineerEmail, data.engineerGithub);
+
+        let uniqueRole = newIntern.getRole();
+        let uniqueName = newIntern.getName();
+        let uniqueID = newIntern.getId();
+        let uniqueEmail = newIntern.getEmail();
+        let uniqueGithub = newIntern.getGithub();
+        
+        var engineerStr = `
+        <div class="card m-5 mt-4" style="width: 18rem;">
+            <div class="card-header text-center text-white bg-success bg-opacity-75">
+                ${uniqueRole}
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Name: ${uniqueName}</li>
+                <li class="list-group-item">ID: ${uniqueID}</li>
+                <li class="list-group-item">Email: ${uniqueEmail}</li>
+                <li class="list-group-item">Github: ${uniqueGithub}</li>
+            </ul>
+        </div>
+  
+    `;
+        templateStr += engineerStr;
+
         console.log(newEngineer);
 
         if(data.addEmployee === "Engineer") {
@@ -164,6 +187,29 @@ function addIntern() {
     .then((data) => {
         var newIntern = new Intern(data.internName, data.internID,
             data.internEmail, data.internSchool);
+
+        let uniqueRole = newIntern.getRole();
+        let uniqueName = newIntern.getName();
+        let uniqueID = newIntern.getId();
+        let uniqueEmail = newIntern.getEmail();
+        let uniqueSchool = newIntern.getSchool();
+
+        var internStr = `
+        <div class="card m-5 mt-4" style="width: 18rem;">
+            <div class="card-header text-center text-white bg-success bg-opacity-75">
+                ${uniqueRole}
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Name: ${uniqueName}</li>
+                <li class="list-group-item">ID: ${uniqueID}</li>
+                <li class="list-group-item">Email: ${uniqueEmail}</li>
+                <li class="list-group-item">Github: ${uniqueSchool}</li>
+            </ul>
+        </div>
+  
+    `;
+        templateStr += internStr;
+        
         console.log(newIntern);
 
         if(data.addEmployee === "Engineer") {
