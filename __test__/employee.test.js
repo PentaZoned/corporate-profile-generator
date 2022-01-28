@@ -7,7 +7,7 @@ describe('Employee', () => {
         let currentName = employee1.getName();
         // Assert
         expect(currentName).toBe("Emily");
-    })
+    });
 
     it('getId returns the Id of the current employee instance', () => {
 
