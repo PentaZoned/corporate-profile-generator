@@ -42,7 +42,7 @@ inquirer
         var newManager = new Manager(data.managerName, data.managerID,
             data.managerEmail, data.managerOfficeNum);
 
-        // Calls on the methods of the Manager class and assigns them to a usuable variable
+        // Calls on the methods of the Manager class and assigns them to usuable variables
         let uniqueRole = newManager.getRole();
         let uniqueName = newManager.getName();
         let uniqueID = newManager.getId();
@@ -112,15 +112,17 @@ function addEngineer() {
         },
     ])
     .then((data) => {
-        var newEngineer = new Engineer(data.engineerName, data.engineerID,
-                                    data.engineerEmail, data.engineerGithub);
+        // Creates a new instance of the Engineer class
+        var newEngineer = new Engineer(data.engineerName, data.engineerID, data.engineerEmail, data.engineerGithub);
 
+        // Calls on the methods of the Engineer class and assigns them to usuable variables
         let uniqueRole = newEngineer.getRole();
         let uniqueName = newEngineer.getName();
         let uniqueID = newEngineer.getId();
         let uniqueEmail = newEngineer.getEmail();
         let uniqueGithub = newEngineer.getGithub();
         
+        // template string for the engineer card
         var engineerStr = `
         <div class="card m-5 mt-4" style="width: 18rem;">
             <div class="card-header text-center text-white bg-success bg-opacity-75">
@@ -147,6 +149,7 @@ function addEngineer() {
     })
 }
 
+// Function adds 
 function addIntern() {
 
     inquirer
@@ -180,15 +183,17 @@ function addIntern() {
         },
     ])
     .then((data) => {
-        var newIntern = new Intern(data.internName, data.internID,
-            data.internEmail, data.internSchool);
+        // Creates a new instance of the Intern class
+        var newIntern = new Intern(data.internName, data.internID, data.internEmail, data.internSchool);
 
+        // Calls on the methods of the Intern class and assigns them to usuable variables
         let uniqueRole = newIntern.getRole();
         let uniqueName = newIntern.getName();
         let uniqueID = newIntern.getId();
         let uniqueEmail = newIntern.getEmail();
         let uniqueSchool = newIntern.getSchool();
 
+        // template string for the intern card
         var internStr = `
         <div class="card m-5 mt-4" style="width: 18rem;">
             <div class="card-header text-center text-white bg-success bg-opacity-75">
@@ -215,7 +220,9 @@ function addIntern() {
     })
 }
 
+// Function combines all of the template strings together and writes to a file, creating a HTML page with all of the information gathered
 function generateHTML() {
+    // The first part of the HTML document
     const upperString = `<!DOCTYPE html>
     <html lang="en">
     
@@ -235,13 +242,16 @@ function generateHTML() {
     
         <div class="d-flex flex-row flex-wrap my-5 justify-content-evenly">`;
 
+    // The last part of the HTML document
     const lowerString = `</div>
     </body>
     
     </html>`;
 
+    // Creates the all-in-one template string
     let newString = upperString + templateStr + lowerString;
 
+    // Writes a file named 'index.html' in the dist folder containing the information in newString
     fs.writeFile('./dist/index.html', newString, (err) =>
         err ? console.log(err) : console.log("Success!")
     );
