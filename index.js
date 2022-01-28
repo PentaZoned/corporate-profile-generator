@@ -60,7 +60,7 @@ inquirer
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">Name: ${uniqueName}</li>
                 <li class="list-group-item">ID: ${uniqueID}</li>
-                <li class="list-group-item">Email: ${uniqueEmail}</li>
+                <li class="list-group-item">Email: <a href="mailto:${uniqueEmail}">${uniqueEmail}</a></li>
                 <li class="list-group-item">Office Number: ${uniqueOffNum}</li>
             </ul>
         </div>
@@ -131,8 +131,8 @@ function addEngineer() {
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">Name: ${uniqueName}</li>
                 <li class="list-group-item">ID: ${uniqueID}</li>
-                <li class="list-group-item">Email: ${uniqueEmail}</li>
-                <li class="list-group-item">Github: ${uniqueGithub}</li>
+                <li class="list-group-item">Email: <a href="mailto:${uniqueEmail}">${uniqueEmail}</a></li>
+                <li class="list-group-item">Github: <a href="https://github.com/${uniqueGithub}" target="_blank">${uniqueGithub}</a></li>
             </ul>
         </div>
   
@@ -201,7 +201,7 @@ function addIntern() {
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">Name: ${uniqueName}</li>
                 <li class="list-group-item">ID: ${uniqueID}</li>
-                <li class="list-group-item">Email: ${uniqueEmail}</li>
+                <li class="list-group-item">Email: <a href="mailto:${uniqueEmail}">${uniqueEmail}</a></li>
                 <li class="list-group-item">School: ${uniqueSchool}</li>
             </ul>
         </div>
