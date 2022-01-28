@@ -27,11 +27,22 @@ User can run `npm test` to test the test cases.
 * [Inquirer Package](https://www.npmjs.com/package/inquirer)
 * [Jest Package](https://jestjs.io/docs/getting-started)
 
+## Video Explanation & Demonstration
+
+The video focuses on the perspective of the user.
+
+* [Video Demonstration](https://watch.screencastify.com/v/nZIPtvVEGNeX3CxzUz73)
+* [Video Demonstration - Continued](https://watch.screencastify.com/v/SyeZBrboyfPXJUd16NZ2)
+
 ## Screenshots
 
 * [Screenshot of the application run in command-line](images/screenshot1.jpg)
 
+An example of a user running the application and filling out some team information on manager, engineer, and intern.
+
 * [Screenshot of the generated HTML file of Team Members](images/screenshot2.jpg)
+
+This is the output html file from the application and how it looks shown on the browser.
 
 ## Authors
 
