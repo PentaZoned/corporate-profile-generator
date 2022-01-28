@@ -36,11 +36,11 @@ The video focuses on the perspective of the user.
 
 ## Screenshots
 
-* [Screenshot of the application run in command-line](images/screenshot1.jpg)
+* ![Screenshot of the application run in command-line](images/screenshot1.jpg)
 
 An example of a user running the application and filling out some team information on manager, engineer, and intern.
 
-* [Screenshot of the generated HTML file of Team Members](images/screenshot2.jpg)
+* ![Screenshot of the generated HTML file of Team Members](images/screenshot2.jpg)
 
 This is the output html file from the application and how it looks shown on the browser.
 
