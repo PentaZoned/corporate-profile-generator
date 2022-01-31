@@ -1,0 +1,1 @@
+This file was created to make the dist folder appear. If there is nothing in the dist folder, it would not appear in Github.
